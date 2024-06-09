@@ -35,7 +35,11 @@ class HuffmanTree:
             right_subtree = self.find_the_smallest_one()
             self.subtrees.remove(right_subtree)
             # create parent
-            parent = Node(weight=(left_subtree.weight + right_subtree.weight), letter=left_subtree)
+            # for comparison with other subtrees store the smallest letter of the subtree
+            parent_letter_for_comparison = left_subtree.letter if left_subtree.letter < right_subtree.letter \
+                else right_subtree.letter
+            parent = Node(weight=(left_subtree.weight + right_subtree.weight),
+                          letter=parent_letter_for_comparison)
             parent.left = left_subtree
             parent.right = right_subtree
             # add new subtree to subtree list

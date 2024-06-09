@@ -2,7 +2,7 @@ import TextConverter
 from HuffmanTree import HuffmanTree
 
 # Set text for encoding
-text = "the technique works by creating a binary tree of nodes"
+text = "aabce"
 
 # Resulting distribution dictionary of text converter class
 distribution = TextConverter.convert_to_map(text)
